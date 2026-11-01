@@ -331,7 +331,7 @@ TSWLatexianTemp*
 #*Notes.bib
 
 # Public template: fonts and local-only files
-# Font binaries are supplied by each user under their applicable licence.
+# Additional fonts are ignored; the 12 included fonts are explicitly allowed below.
 /fonts/**/*.ttf
 /fonts/**/*.ttc
 /fonts/**/*.otf
@@ -356,6 +356,7 @@ TSWLatexianTemp*
 /main.pdf
 /build/
 /output/
+/BISTU-Doctoral-LaTeX-Template.zip
 
 # Local editor and operating-system files
 /.vscode/
@@ -370,3 +371,17 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Explicit font files included in the complete template at the maintainer's request.
+!/fonts/arial.ttf
+!/fonts/arialbd.ttf
+!/fonts/arialbi.ttf
+!/fonts/ariali.ttf
+!/fonts/fangsong-gb2312.ttf
+!/fonts/simfang.ttf
+!/fonts/simhei.ttf
+!/fonts/simsun.ttc
+!/fonts/times.ttf
+!/fonts/timesbd.ttf
+!/fonts/timesbi.ttf
+!/fonts/timesi.ttf

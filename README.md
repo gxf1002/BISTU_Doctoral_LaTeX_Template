@@ -8,17 +8,17 @@ BISTU-Doctoral-General-Template开发过程中，主要的维护者：
 
 本工程是社区维护的独立通用模板，依据学校 Word 模板及已确认的排版要求整理，目前未提供学校将本工程认定为官方 LaTeX 模板的证明。维护者署名与致谢保留真实信息；论文示例中的作者、导师、委员会成员、学号、日期、简历及成果均为占位内容。学校名称、单位代码、校徽和学校声明保留，相关权利说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
-本项目的自有源码采用 [Apache License 2.0](LICENSE)。该许可不为字体、学校标识及学校声明等第三方内容额外授予权利，详见 [第三方说明](THIRD_PARTY_NOTICES.md)。本公开源码包不附带字体文件。模板仍要求与学校格式一致的准确字体，须按 [字体配置说明](fonts/README.md) 配齐具有相应使用授权的字体后才能编译。GitHub 发布与 Overleaf 模板库提交说明见 [PUBLISHING.md](PUBLISHING.md)。
+本项目的自有源码采用 [Apache License 2.0](LICENSE)。该许可不为字体、学校标识及学校声明等第三方内容额外授予权利，详见 [第三方说明](THIRD_PARTY_NOTICES.md)。当前版本已同步原工程使用的全部 12 个字体文件，可按模板原有字体设置编译，无需另行补齐字体。字体清单与权利说明见 [fonts/README.md](fonts/README.md)。GitHub 发布与 Overleaf 模板库提交说明见 [PUBLISHING.md](PUBLISHING.md)。
 
 
-公开仓库：[gxf1002/BISTU_Doctoral_LaTeX_Template](https://github.com/gxf1002/BISTU_Doctoral_LaTeX_Template)。根目录中的 `main.tex` 为编译入口，可通过 **Code → Download ZIP** 获取完整源码，或克隆本仓库。仓库保留的 `BISTU-Doctoral-LaTeX-Template.zip` 为首次上传的历史打包版本；最新说明和许可证以根目录文件为准。
+公开仓库：[gxf1002/BISTU_Doctoral_LaTeX_Template](https://github.com/gxf1002/BISTU_Doctoral_LaTeX_Template)。根目录中的 `main.tex` 为编译入口。通过 [下载完整模板 ZIP](https://github.com/gxf1002/BISTU_Doctoral_LaTeX_Template/archive/refs/heads/main.zip) 或 **Code → Download ZIP** 获取源码、12 个字体文件及许可证，也可克隆本仓库。下载包由 GitHub 根据当前 `main` 分支自动生成，与仓库内容一致；旧的缺字体 ZIP 已从仓库根目录移除。
 
-[在 Overleaf 中导入源码](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fgxf1002%2FBISTU_Doctoral_LaTeX_Template%2Farchive%2Frefs%2Fheads%2Fmain.zip)（导入后仍需按下文配置获准使用的准确字体）。
+[在 Overleaf 中打开完整模板](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fgxf1002%2FBISTU_Doctoral_LaTeX_Template%2Farchive%2Frefs%2Fheads%2Fmain.zip%3Fv%3Dfonts-20261102&engine=xelatex&main_document=main.tex)（已包含字体，并指定 XeLaTeX 与 main.tex）。
 
 ## 快速开始
 
-1. 在 Overleaf 选择“新建项目 → 上传项目”，上传本模板 ZIP；也可在本地解压使用。
-2. 先按 [fonts/README.md](fonts/README.md) 配置全部 12 个准确字体文件，再将主文档设为 `main.tex`，编译器设为 **XeLaTeX**。保留 `.cls`、`.bst` 和所有源文件。仅上传此公开 ZIP、未配置字体时会因缺少字体而停止编译。
+1. 点击上方“在 Overleaf 中打开完整模板”，或下载完整导入包，在 Overleaf 选择“新建项目 → 上传项目”。也可在本地解压使用。
+2. 主文档使用 `main.tex`，编译器使用 **XeLaTeX**；一键导入链接已指定这两个参数。保留完整的 `fonts/`、`.cls`、`.bst` 和源文件，点击重新编译。
 3. 编辑 `thesis-info.tex`，填写中英文题目、姓名、学号、导师、学院、专业、方向、日期和答辩委员会；学位类型请从“学术型/专业型”中选定一种。
 4. 第一章“绪论”集中给出全部格式说明、学校写作规范表以及图、表、公式、参考文献示例。先阅读这一章，再将其替换为自己的绪论正文。
 5. 替换其余章节的占位正文及中英文摘要，核实每一条引用与学术成果。模板的演示书目和成果均为虚构占位，不可作为真实研究证据。
@@ -39,12 +39,12 @@ BISTU-Doctoral-General-Template开发过程中，主要的维护者：
 | `chapters/notation.tex` | 左侧符号、右侧说明，无横线的符号清单 |
 | `bib/references.bib` | 明确标识的虚构书目演示条目，正式写作时替换 |
 | `bistu-thesis.bst` | 配套 BibTeX 样式 |
-| `fonts/` | 准确字体文件清单与配置说明；公开源码包不附带字体二进制 |
+| `fonts/` | 模板使用的 12 个原字体文件及说明 |
 | `figures/` | 学校标识；自己的图片也放在这里 |
 
 ## 编译
 
-完成准确字体配置并确认所需上传权限后，在 Overleaf 选择 XeLaTeX 并点击重新编译。必要时使用“从头重新编译”清除旧缓存。当前公开包不含字体，不能单独作为开箱即用的 Overleaf 模板库提交包。
+在 Overleaf 使用 XeLaTeX 编译 `main.tex`。完整导入包已经包含所需字体；必要时使用“从头重新编译”清除旧缓存。此前已经导入的旧项目不会随 GitHub 更新而自动同步，请从上方入口重新导入，或为旧项目同步 `fonts/` 中的 12 个文件。
 
 本地安装完整 TeX Live 后，在工程目录依次执行：
 
