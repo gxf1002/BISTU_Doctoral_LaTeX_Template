@@ -13,7 +13,7 @@ BISTU-Doctoral-General-Template开发过程中，主要的维护者：
 
 公开仓库：[gxf1002/BISTU_Doctoral_LaTeX_Template](https://github.com/gxf1002/BISTU_Doctoral_LaTeX_Template)。根目录中的 `main.tex` 为编译入口。通过 [下载完整模板 ZIP](https://github.com/gxf1002/BISTU_Doctoral_LaTeX_Template/archive/refs/heads/main.zip) 或 **Code → Download ZIP** 获取源码、12 个字体文件及许可证，也可克隆本仓库。下载包由 GitHub 根据当前 `main` 分支自动生成，与仓库内容一致；旧的缺字体 ZIP 已从仓库根目录移除。
 
-[在 Overleaf 中打开完整模板](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fgxf1002%2FBISTU_Doctoral_LaTeX_Template%2Farchive%2Frefs%2Fheads%2Fmain.zip%3Fv%3Dfonts-20261102&engine=xelatex&main_document=main.tex)（已包含字体，并指定 XeLaTeX 与 main.tex）。
+[在 Overleaf 中打开完整模板](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fgxf1002%2FBISTU_Doctoral_LaTeX_Template%2Farchive%2Frefs%2Fheads%2Fmain.zip%3Fv%3Doverleaf-81962d9&engine=xelatex&main_document=main.tex)（已包含字体，并指定 XeLaTeX 与 main.tex）。
 
 ## 快速开始
 
@@ -67,7 +67,7 @@ xelatex -interaction=nonstopmode -halt-on-error main.tex
 
 ## 内部资料标记
 
-模板默认不显示。需要显示封面“内部资料，注意保存”时，在 `thesis-info.tex` 将 `\confidentialfalse` 改为 `\confidentialtrue`。该开关只控制封面文字，不会自动勾选或改变授权书的公开、保密选项。
+当前版本与最新 Overleaf 工程一致，默认显示封面“内部资料，注意保存”。需要关闭时，在 `thesis-info.tex` 将 `\confidentialtrue` 改为 `\confidentialfalse`；需要恢复显示时改回 `\confidentialtrue`。该开关只控制封面文字，不会自动勾选或改变授权书的公开、保密选项。
 
 ## 排页说明
 

@@ -61,7 +61,7 @@ GitHub 的解释：[为仓库选择许可证](https://docs.github.com/en/reposit
 README 的导入入口使用 GitHub 根据当前 `main` 分支自动生成的 ZIP，其中包含源码、字体和许可证，不嵌套旧的工程 ZIP。这样更新源码后，下载包会同步更新。导入链接同时指定 XeLaTeX 和主文档：
 
 ```markdown
-[在 Overleaf 中打开完整模板](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fgxf1002%2FBISTU_Doctoral_LaTeX_Template%2Farchive%2Frefs%2Fheads%2Fmain.zip%3Fv%3Dfonts-20261102&engine=xelatex&main_document=main.tex)
+[在 Overleaf 中打开完整模板](https://www.overleaf.com/docs?snip_uri=https%3A%2F%2Fgithub.com%2Fgxf1002%2FBISTU_Doctoral_LaTeX_Template%2Farchive%2Frefs%2Fheads%2Fmain.zip%3Fv%3Doverleaf-81962d9&engine=xelatex&main_document=main.tex)
 ```
 
 也可以下载该 ZIP，在 Overleaf 选择 **New Project → Upload Project**，然后用 `main.tex` 与 XeLaTeX 编译。这个入口不表示已被 Overleaf Gallery 收录。此前导入的旧项目不会自动更新，需要重新导入或手动同步字体文件。
