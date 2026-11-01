@@ -329,3 +329,44 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+# Public template: fonts and local-only files
+# Font binaries are supplied by each user under their applicable licence.
+/fonts/**/*.ttf
+/fonts/**/*.ttc
+/fonts/**/*.otf
+/fonts/**/*.woff
+/fonts/**/*.woff2
+
+# LaTeX build products
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+/main.pdf
+/build/
+/output/
+
+# Local editor and operating-system files
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*~
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example

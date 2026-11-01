@@ -1,0 +1,23 @@
+% 在此统一填写题目、作者、学号、导师、学院、专业、方向及日期。
+% 封面、题名页、声明与 PDF 题目和作者元数据读取这些配置。
+\setthesisinfo
+  {博士学位论文中文题目}
+  {Title of the Doctoral Dissertation}
+  {张三}{Zhang San}{0000000000}
+  {李四 教授}{Prof. Li Si}
+  {学科专业名称}{Name of the Discipline}
+% 封面题目可按语义手动分行；完整题目仍使用上面的第一项。
+\newcommand{\thesistitlezhcover}{博士学位论文\\中文题目}
+\renewcommand{\thesisschool}{培养学院名称}
+\renewcommand{\thesisdirection}{学科方向名称}
+\renewcommand{\thesistype}{学术型/专业型} % 使用时选择一种。
+\renewcommand{\thesischair}{王五 教授}
+\renewcommand{\thesiscommittee}{王五 教授\\赵六 教授\\孙七 教授\\周八 教授}
+\renewcommand{\completiondate}{20XX 年 X 月 X 日}
+\renewcommand{\defensedate}{20XX 年 X 月 X 日}
+\renewcommand{\submitdate}{20XX 年 X 月 X 日}
+% true 显示封面“内部资料，注意保存”；false 关闭该标识。
+\confidentialfalse
+% 兼容旧版备注开关；通用模板的格式说明集中在第一章。
+\newif\ifbistuformatnotes
+\bistuformatnotesfalse

@@ -1,0 +1,47 @@
+% !TeX program = xelatex
+% !BIB program = bibtex
+\documentclass{bistu-doctoral}
+% 本地和 Overleaf 均从 fonts/ 加载 Word 要求的原字体，不使用替代字体。
+\graphicspath{{figures/}}
+\input{thesis-info}
+% 全部格式说明和排版示例集中在 chapters/ch01.tex，不在各页插入备注。
+\hypersetup{pdftitle={\thesistitlezh},pdfauthor={\thesisauthorzh}}
+\begin{document}
+% 五页封面/题名/声明不显示页码，禁用页码锚点以防重名。
+\hypersetup{pageanchor=false}
+\pagestyle{empty}
+\input{chapters/cover}
+\input{chapters/declaration}
+\clearpage
+\frontmatter
+\hypersetup{pageanchor=true}
+\bistufrontheader{摘\quad 要}
+\input{chapters/abstract-cn}
+\clearpage
+\bistufrontheader{Abstract}
+\input{chapters/abstract-en}
+\bistutableofcontents
+\bistulistoffigures
+\bistulistoftables
+\bistufrontheader{符号清单}
+\input{chapters/notation}
+\mainmatter
+\bistumainheader
+\include{chapters/ch01}
+\include{chapters/ch02}
+\include{chapters/ch03}
+\include{chapters/ch04}
+\include{chapters/ch05}
+\include{chapters/ch06}
+\include{chapters/conclusion}
+\backmatter
+\bistubackheader{参考文献}
+\input{chapters/references}
+% 先补白再切换页眉，保证空白左页仍属于上一部分。
+\cleardoublepage
+\bistubackheader{致\quad 谢}
+\input{chapters/acknowledgements}
+\cleardoublepage
+\bistubackheader{个人简历、博士学位期间发表的学术成果}
+\input{chapters/cv-publications}
+\end{document}

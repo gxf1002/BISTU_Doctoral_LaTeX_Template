@@ -1,0 +1,108 @@
+% 三页封面/题名页。各页独立分组。
+% 中文题目采用 26 bp 黑体、1.5 倍行距（32 bp 基准 × 1.5）；仅在题目段内生效。
+\thispagestyle{empty}
+\begingroup
+\setlength{\parindent}{0pt}
+% Word 首段继承两字符缩进：三号 16 磅 × 2 = 32 bp。
+% 对照原始封皮 PDF：文字左端约 117 bp、上端约 75 bp。
+% 只校正本行的可见位置，保持行盒尺寸，避免推动下方校徽和标题。
+{\fsonggb\fontsize{16bp}{22bp}\selectfont
+  \hspace*{32bp}%
+  \raisebox{-3.7bp}[\height][\depth]{%
+    单位代码：\raisebox{-1bp}[\height][\depth]{{\tnr 11232}}}%
+  \ifconfidential
+    % 原 Word 不宜公开封皮：宋体三号，右上角方框；不占正文排版空间。
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[line width=0.75bp]
+        ([xshift=363.95bp,yshift=-74.15bp]current page.north west)
+        rectangle ++(160.75bp,-26.70bp);
+      \node[anchor=center,inner sep=0pt,
+        font=\normalfont\songti\fontsize{16bp}{20bp}\linespread{1.5}\selectfont]
+        at ([xshift=444.325bp,yshift=-87.5bp]current page.north west)
+        {内部资料，注意保存};
+    \end{tikzpicture}%
+  \fi\par}
+\vspace{1.1cm}
+\begin{center}
+\includegraphics[width=7cm]{bistu_logo_full.png}\par
+\vspace{1.0cm}
+% 【格式备注】“博士学位论文”：黑体56磅、单倍行距，独立段落居中。
+{\heiti\fontsize{56bp}{64bp}\linespread{1}\selectfont 博士学位论文\par}
+\vspace{0.2cm}
+% 【格式备注】学位类型：黑体20磅、1.5倍行距；段落在组内结束，避免样式外溢。
+{\heiti\fontsize{20bp}{24bp}\linespread{1.5}\selectfont （\thesistype）\par}
+\vspace{1.8cm}
+{\heiti\bfseries\fontsize{26bp}{32bp}\linespread{1.5}\selectfont\thesistitlezhcover\par}
+\vspace{2.0cm}
+{\fsonggb\fontsize{16bp}{30bp}\selectfont
+\begin{tabular}{@{}l@{}}
+培养学院：\thesisschool\\
+学科专业：\thesismajorzh\\
+作者姓名：\thesisauthorzh\\
+指导教师：\thesissupervisorzh\\
+完成日期：\completiondate
+\end{tabular}\par}
+\end{center}
+\par\endgroup\clearpage
+
+\thispagestyle{empty}
+\begingroup
+\setlength{\parindent}{0pt}
+\vspace*{2.0cm}
+% 【格式备注】黑体二号22磅、1.5倍行距；相邻字间一个黑体普通空格=11磅。
+% 显式间隔避免xeCJK忽略中文之间的源代码空格。
+{\centering\heiti\fontsize{22bp}{28bp}\linespread{1.5}\selectfont
+博\hspace{11bp}士\hspace{11bp}学\hspace{11bp}位\hspace{11bp}论\hspace{11bp}文\par}
+% 下面1.1cm是封面分区留白；题目自身段前、段后另各设2.5磅。
+\vspace{1.1cm}
+\vspace{2.5bp}
+{\centering\heiti\bfseries\fontsize{26bp}{32bp}\linespread{1.5}\selectfont\thesistitlezhcover\par}
+\vspace{2.5bp}
+\vspace{2.5cm}
+% 一个普通仿宋16磅空格=8磅；仅在本页将姓名字段中的空格显式化。
+% 元数据仅展开一层，保留委员名单中的换行，不修改thesis-info.tex。
+% 使用普通TeX命令，避免编辑器把LaTeX3命令名中的下划线误判为数学下标。
+% 末尾空格只作分隔终止符；先选定分支再输出，允许委员名单中的换行。
+\protected\long\def\bistutitleperson#1{%
+  \expandafter\bistutitlespaces#1 \bistutitlespacestop}
+\long\def\bistutitlespaces#1 #2\bistutitlespacestop{%
+  \ifstrempty{#2}{#1}{#1\hspace{8bp}\bistutitlespaces#2\bistutitlespacestop}}
+% 按Word示例将各字段左端对齐，整个信息块按最长一行的宽度居中。
+% 冒号后显式空8磅，内容紧随各自字段，不强制对齐不同长度字段的冒号。
+{\centering\fsong\fontsize{16bp}{30bp}\selectfont
+% 保留全宽冒号，避免标点压缩改变冒号后的显式间隔。
+\xeCJKsetup{PunctStyle=plain}
+\begin{tabular}[t]{@{}l@{}}
+作\hspace{2em}者：\hspace{8bp}\bistutitleperson{\thesisauthorzh}\\
+学\hspace{2em}号：\hspace{8bp}\thesisstudentid\\
+指导教师：\hspace{8bp}\bistutitleperson{\thesissupervisorzh}\\
+答辩委员会主席：\hspace{8bp}\bistutitleperson{\thesischair}\\
+答辩委员会委员：\hspace{8bp}\begin{tabular}[t]{@{}l@{}}\bistutitleperson{\thesiscommittee}\end{tabular}\\
+学科专业：\hspace{8bp}\thesismajorzh\\
+学科方向：\hspace{8bp}\thesisdirection\\
+论文答辩日期：\hspace{8bp}\defensedate\\
+论文提交日期：\hspace{8bp}\submitdate
+\end{tabular}\par}
+\par\endgroup\clearpage
+
+\thispagestyle{empty}
+\begingroup
+\setlength{\parindent}{0pt}
+\centering
+\vspace*{1.8cm}
+{\tnr\fontsize{16bp}{24bp}\selectfont
+A Dissertation Submitted for the Degree of Doctor of Philosophy\par}
+\vspace{3.5cm}
+% 【格式备注】英文题目Times New Roman 26磅加粗、固定32磅行距；只改格式。
+% 显式将行距倍率设为1，避免32磅再叠加其他段落的倍数行距。
+{\normalfont\tnr\bfseries\fontsize{26bp}{32bp}\linespread{1}\selectfont\thesistitleen\par}
+
+\vfill
+{\tnr\fontsize{16bp}{30bp}\selectfont
+\begin{tabular}{@{}l@{\hspace{1em}}l@{}}
+Major: & \underline{\makebox[8.6cm]{\thesismajoren}}\\
+Candidate: & \underline{\makebox[8.6cm]{\thesisauthoren}}\\
+Supervisor: & \underline{\makebox[8.6cm]{\thesissupervisoren}}
+\end{tabular}\par}
+\vspace*{2.5cm}
+\par\endgroup\clearpage
