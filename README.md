@@ -1,0 +1,2 @@
+# BISTU_Doctoral_LaTeX_Template
+北京信息科技大学博士论文模版
